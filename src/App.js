@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React, {useEffect} from "react";
+import {OpenCvProvider, useOpenCv} from "opencv-react";
+import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
+import Home from "./Screen/components/Home/Home";
+import HandTracker from "./Screen/components/HandTracker/HandTracker";
+import ErrorPage from "./Screen/components/ErrorPage/ErrorPage";
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <OpenCvProvider>
+          {/*<Mycomponent></Mycomponent>*/}
+          <HandTracker />
+
+      </OpenCvProvider>
+
   );
 }
 
